@@ -1,0 +1,35 @@
+{{>layout/header}}
+<div class="col-md-12">
+    <div class="row">
+        <div class="col-md-6">
+            <a href="/feed" class="btn btn-danger" role="button"><i class="fa fa-bolt" aria-hidden="true"></i> 속보</a>
+            <a href="/headline" role="button" class="btn btn-primary"><i class="fa fa-comment" aria-hidden="true"></i> 헤드라인</a>
+                <a href="/weather" class="btn btn-info" role="button"><i class="fa fa-thermometer-half" aria-hidden="true"></i>
+                     날씨</a>
+            <a href="/economy" class="btn btn-success" role="button"><i class="fa fa-line-chart" aria-hidden="true"></i>
+                경제</a>
+        </div>
+    </div>
+    <br>
+    <table class="table table-horizontal table-bordered">
+        <thead class="thead-strong">
+        <tr>
+            <th>제목</th>
+            <th>링크</th>
+            <th>시간</th>
+        </tr>
+        </thead>
+        <tbody id="tbody">
+        {{#posts}}
+            <tr>
+                <td>{{title}}</td>
+                <td><a href="{{content}}" target="area">{{content}}</a></td>
+                <td>{{category}}</td>
+            </tr>
+        {{/posts}}
+        </tbody>
+    </table>
+</div>
+<iframe name="area" src="" frameborder="0" framespacing="0" marginheight="80" marginwidth="0" align="center"
+        width="100%" height="900" frameborder="0px" scrolling="yes"></iframe>
+{{>layout/footer}}
